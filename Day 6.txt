@@ -1,0 +1,161 @@
+									DAY = 6
+
+Queation 1. (a)
+
+				class Movie {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+
+(b)		class Movie {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating || "PG";
+  }
+
+}
+
+
+const movie1 = new Movie("Movie 1", "Studio 1"); 
+console.log(movie1.rating);  Output: "PG"
+
+const movie2 = new Movie("Movie 2", "Studio 2", ""); 
+console.log(movie2.rating);  Output: "PG"
+
+const movie3 = new Movie("Movie 3", "Studio 3", "R"); 
+console.log(movie3.rating);  Output: "R"
+
+
+(c)  
+				class Movie {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating || "PG";
+  }
+
+  static getPG(movies) {
+    return movies.filter(movie => movie.rating === "PG");
+  }
+}
+
+
+(d) 				const casinoRoyale = new Movie("Casino Royale", "Eon Productions", "PG-13");
+
+#####################################################################################################################################
+
+
+Question : 2		
+
+	class Circle {
+  private radius: number;
+  private color: string;
+
+  constructor(radius: number = 1.0, color: string = "red") {
+    this.radius = radius;
+    this.color = color;
+  }
+
+  getRadius(): number {
+    return this.radius;
+  }
+
+  setRadius(radius: number): void {
+    this.radius = radius;
+  }
+
+  getColor(): string {
+    return this.color;
+  }
+
+  setColor(color: string): void {
+    this.color = color;
+  }
+}
+
+#######################################################
+
+Question : (3)
+
+				class Person {
+  constructor(name, age, gender, address, phoneNumber) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.address = address;
+    this.phoneNumber = phoneNumber;
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  getAge() {
+    return this.age;
+  }
+
+  getGender() {
+    return this.gender;
+  }
+
+  getAddress() {
+    return this.address;
+  }
+
+  getPhoneNumber() {
+    return this.phoneNumber;
+  }
+
+  setName(name) {
+    this.name = name;
+  }
+
+  setAge(age) {
+    this.age = age;
+  }
+
+  setGender(gender) {
+    this.gender = gender;
+  }
+
+  setAddress(address) {
+    this.address = address;
+  }
+
+  setPhoneNumber(phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+}
+
+
+##########################################################################
+
+Question : (4)
+
+				class UberPriceCalculator {
+  constructor(basePrice, costPerKilometer, surgeMultiplier) {
+    this.basePrice = basePrice;
+    this.costPerKilometer = costPerKilometer;
+    this.surgeMultiplier = surgeMultiplier;
+  }
+
+  calculatePrice(distance) {
+    const surgePrice = this.basePrice * this.surgeMultiplier;
+    const distancePrice = distance * this.costPerKilometer;
+    const totalPrice = surgePrice + distancePrice;
+    return totalPrice;
+  }
+}
+
+
+const calculator = new UberPriceCalculator(5, 1.5, 1.2);
+const distance = 10; // Distance in kilometers
+
+const totalPrice = calculator.calculatePrice(distance);
+console.log("Total price:", totalPrice);
+
+
